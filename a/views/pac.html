@@ -1,0 +1,37 @@
+  <div ng-controller="taskController">
+    <div class="container">
+	<div class="row">
+  	<div class="col-md-4 text-center">
+  		<form name="myForm" novalidate>
+      <input type="text" ng-model="task.name" placeholder="Имя">
+      <input type="text" ng-model="task.surname" placeholder="Фамилия">
+      <input type="email" name="email" ng-model="task.email" placeholder="email">
+      <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+			<span ng-show="myForm.email.$error.required">Email is required.</span>
+			<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+			</span>
+      <input type="number" ng-model="task.age" placeholder="Возраст">
+      <input list="sex" ng-model="task.sex" placeholder="Пол">
+      <datalist id="sex">
+    	<option>Муж</option>
+    	<option>Жен</option>
+  		</datalist>
+		      <button class="text-center" ng-click="addtask()" type="submit">Добавить</button>
+		  </form>
+    <ul>
+    	<h3>Список пациентов</h3>
+      <li class="task-item" ng-repeat="task in tasks">
+        <span class="dne" ng-click="handler($index)">{{task.name}}  {{task.surname}}</span>
+        <span class="done" ng-click="removeItem($index)">X</span>
+      </li>
+    </ul>
+    </div>
+		<div class="col-md-2">
+			<h4>{{task.aaa}}</h4>
+			<h4> {{task.name}} </h4>
+			<h4> {{task.surname}} </h4>
+			<h4> {{task.age}} </h4>
+			<h4> {{task.sex}} </h4>
+		</div>
+    </div>
+    </div>

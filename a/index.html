@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<script></script>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<title>Project</title>
+	<script src="bower/angular/angular.js"></script>
+	<script src="bower/angular-route/angular-route.js"></script>
+	<script src="bower/angular-local-storage/dist/angular-local-storage.js"></script>
+	<script src="app/appModule.js"></script>
+	<script src="bower/bower-angular-animate-master/angular-animate.js"></script>
+	<script src="bower/bower-angular-messages-master/angular-messages.js"></script>
+	<script src="controllers/taskController.js"></script>
+	<script src="controllers/priemController.js"></script>
+	<script src="controllers/main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="Main">
+  	<div class="container">
+<div class="raw">
+<div class="navbar navbar-inverse static-top">
+	<div class="container">
+    	<div class="navbar-header">
+    		<button type="button" data-target="#navColl" data-toggle="collapse" class="navbar-toggle">
+     			<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+    		</button>
+  		</div>
+  	<div id="navColl" class="collapse navbar-collapse">
+		    <ul class="nav navbar-nav">
+		    	<li ng-click=" goTo('/Pac')">Pac</li>
+		    	<li ng-click="goTo('/Priem') ">Priem</li>
+		    </ul>
+		<p> {{dateTime.pubdate |  date:'medium'}} </p>
+		</div>
+		</div>
+</div>
+<div ng-view>		</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div ng-controller="priemController">
+	<input type="text" ng-model="pr.name" placeholder="Название отделения">
+	<input type="text" ng-model="pr.zav" placeholder="Зав отделением">
+	<button class="text-center" ng-click="addOtd()" type="submit">Добавить</button>
+	<h3>Список отделений</h3>
+      <li  ng-repeat="task in prs">
+        <span class="dne" ng-click="handler($index)">{{pr.name}}  {{pr.zav}}</span>
+        <span class="done" ng-click="removeItem($index)">X</span>
+      </li>
+</div>
