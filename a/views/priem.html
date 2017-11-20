@@ -1,10 +1,28 @@
 <div ng-controller="priemController">
-	<input type="text" ng-model="pr.name" placeholder="Название отделения">
+	<div class= "container">
+		<div class="row">
+			<div class = "col-md-12">
+<!-- 	<input type="text" ng-model="pr.name" placeholder="Название отделения">
 	<input type="text" ng-model="pr.zav" placeholder="Зав отделением">
-	<button class="text-center" ng-click="addOtd()" type="submit">Добавить</button>
+	<button class="text-center" ng-click="addOtd()" type="submit">Добавить</button> -->
 	<h3>Список отделений</h3>
-      <li  ng-repeat="task in prs">
-        <span class="dne" ng-click="handler($index)">{{pr.name}}  {{pr.zav}}</span>
-        <span class="done" ng-click="removeItem($index)">X</span>
+	</div>
+	<div class = "col-md-8">
+		<ul>
+      <li  ng-repeat="pr in prs">
+      	<div class = "col-md-4">
+        <span class="dne" ng-click="handlerr($index)">{{pr.name}}</span>
+        <!-- <span class="done" id="ff" ng-click="removeItem($index)">X</span> -->
+        </div>
+        <label>Показать список пациентов: <input id = "ll" type="checkbox" ng-model="checked" ng-init="checked=falls" /></label> <br>
+        <div ng-if="checked" class="animate-if" >
+				Список пациентов в отделении:	
+				<hr>
+        <p ng-repeat="p in pr.pac">{{p.name}} {{p.surname}}</p>
+        </div>
       </li>
-</div>
+    </ul>
+  </div>
+    </div>
+    </div>
+  </div>

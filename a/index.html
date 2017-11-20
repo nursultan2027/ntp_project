@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/style.css">
 	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Russo+One" rel="stylesheet">
 	<title>Project</title>
 	<script src="bower/angular/angular.js"></script>
 	<script src="bower/angular-route/angular-route.js"></script>
@@ -31,11 +32,11 @@
     		</button>
   		</div>
   	<div id="navColl" class="collapse navbar-collapse">
-		    <ul class="nav navbar-nav">
-		    	<li ng-click=" goTo('/Pac')">Pac</li>
-		    	<li ng-click="goTo('/Priem') ">Priem</li>
+		    <ul class="nav navbar-nav" id = "menu">
+		    	<li ng-click=" goTo('/Pac')">Пациенты</li>
+		    	<li ng-click="goTo('/Priem') ">Отделения</li>
+		    	<li class = "col-md-push-12"> {{dateTime.pubdate |  date:'medium'}} </li>
 		    </ul>
-		<p> {{dateTime.pubdate |  date:'medium'}} </p>
 		</div>
 		</div>
 </div>

@@ -2,6 +2,7 @@
     <div class="container">
 	<div class="row">
   	<div class="col-md-4 text-center">
+      <h2>Добавить пациента</h2>
   		<form name="myForm" novalidate>
       <input type="text" ng-model="task.name" placeholder="Имя">
       <input type="text" ng-model="task.surname" placeholder="Фамилия">
@@ -16,22 +17,36 @@
     	<option>Муж</option>
     	<option>Жен</option>
   		</datalist>
+      <input list="zhaloba1" ng-model="task.zhaloba1" placeholder="Симптом 1">
+      <datalist id="zhaloba1">
+      <option>Головные боли</option>
+      <option>Головокружение</option>
+      <option>Безсонница</option>
+      </datalist>
+      <input list="zhaloba2" ng-model="task.zhaloba2" placeholder="Симптом 2">
+      <datalist id="zhaloba2">
+      <option>Ухудшение зрения</option>
+      <option>Судороги</option>
+      <option>Спазмы</option>
+      </datalist>
+      <input list="zhaloba3" ng-model="task.zhaloba3" placeholder="Симптом 3">
+      <datalist id="zhaloba3">
+      <option>Потливость</option>
+      <option>Ухудшение аппетита</option>
+      <option>Хондра</option>
+      </datalist>
 		      <button class="text-center" ng-click="addtask()" type="submit">Добавить</button>
 		  </form>
+    </div>
+    <div class="col-md-push-5">  
     <ul>
     	<h3>Список пациентов</h3>
       <li class="task-item" ng-repeat="task in tasks">
         <span class="dne" ng-click="handler($index)">{{task.name}}  {{task.surname}}</span>
-        <span class="done" ng-click="removeItem($index)">X</span>
+        <span class="done" id = "ff" ng-click="removeItem($index)">X</span>
+        </div>
       </li>
     </ul>
     </div>
-		<div class="col-md-2">
-			<h4>{{task.aaa}}</h4>
-			<h4> {{task.name}} </h4>
-			<h4> {{task.surname}} </h4>
-			<h4> {{task.age}} </h4>
-			<h4> {{task.sex}} </h4>
-		</div>
     </div>
     </div>
